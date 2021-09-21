@@ -1,70 +1,69 @@
 body {
-    background-color: #f6f6f6;
-    font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+  background-color: #f6f6f6;
+  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
 }
 
 #todo-list {
-    display: flex;
-    background-color: white;
-    position: relative;
-    flex-direction: column;
-    min-width: 20%;
-    max-width: 40%;
-    width: fit-content;
-    word-break: break-word;
-    justify-content: center;
-    align-content: center;
-    box-shadow: 3px 3px 20px 0;
-    
+  display: flex;
+  background-color: white;
+  position: relative;
+  flex-direction: column;
+  min-width: 20%;
+  max-width: 40%;
+  width: fit-content;
+  word-break: break-word;
+  justify-content: center;
+  align-content: center;
+  box-shadow: 3px 3px 20px 0;
 }
 
 #todo-header {
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom-color: #f6f6f6;
-    border-bottom-style: solid;
-    border-width: 1px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-color: #f6f6f6;
+  border-bottom-style: solid;
+  border-width: 1px;
 }
 
 #addTask {
-    height: 40px;
-    border: none;
-    border-bottom-color: #f6f6f6;
-    border-bottom-style: solid;
-    border-width: 1px;
+  height: 40px;
+  border: none;
+  border-bottom-color: #f6f6f6;
+  border-bottom-style: solid;
+  border-width: 1px;
 }
 
 #todo-container {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .todo-element {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    align-items: center;
-    height: 40px;
-    border-bottom-color: #f6f6f6;
-    border-bottom-style: solid;
-    border-width: 1px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+  height: 40px;
+  border-bottom-color: #f6f6f6;
+  border-bottom-style: solid;
+  border-width: 1px;
+  width: 100%;
 }
 
 .todo-element span {
-    position: absolute;
-    right: 0%;
+  position: absolute;
+  right: 0%;
 }
 
 .todo-element p {
-    max-width: 90%;
+  max-width: 90%;
 }
 
 #wipe-tasks {
-    height: 40px;
-    border: none;
-    background-color: #f6f6f6;
+  height: 40px;
+  border: none;
+  background-color: #f6f6f6;
 }
