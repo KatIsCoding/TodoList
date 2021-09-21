@@ -1,4 +1,4 @@
-export class task {
+export class Task {
     constructor(description, index){
         this.description = description
         this.index = index

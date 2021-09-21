@@ -1,7 +1,44 @@
 body {
-    background-color: red;
+    background-color: #a1a1a1;
+}
+
+#todo-list {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    width: 40%;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+
+
+#todo-header {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#addTask {
+    height: 40px;
+}
+
+#todo-container {
+    padding: 0;
+    margin: 0;
 }
 
 .todo-element {
+    display: flex;
+    flex-direction: row;
     list-style: none;
+    align-items: center;
+    height: 40px;
+}
+
+#wipe-tasks {
+    height: 40px;
 }
