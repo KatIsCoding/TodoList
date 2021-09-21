@@ -1,3 +1,5 @@
 import _ from "lodash";
 import "./style.css"
-console.log("Hello world")
+import {task} from "./taskClass"
+
+
