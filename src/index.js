@@ -3,10 +3,10 @@ import _ from 'lodash'; // Unused vars disabled for lodash
 import './style.css';
 import Task from './taskClass.js';
 
-const dataBase = [new Task('Description test1', 0, false), new Task('Description test2', 1, false), new Task('Description test3', 2, false)];
+const dataBase = [new Task('Description test1', 2, false), new Task('Description test2', 1, false), new Task('Description test3', 0, false)];
 
 function showTasks() {
-  dataBase.sort((first, second) => {return first.index - second.index})
+  dataBase.sort((first, second) => first.index - second.index);
   const container = document.getElementById('todo-container');
   dataBase.forEach((task) => {
     const taskElement = document.createElement('li');
