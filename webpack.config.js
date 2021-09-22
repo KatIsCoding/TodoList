@@ -1,5 +1,6 @@
 const path = require('path');
-const htmlwebpack = require("html-webpack-plugin")
+const Htmlwebpack = require('html-webpack-plugin');
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -7,21 +8,21 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
-  mode: "development",
+  mode: 'production',
   devServer: {
-      static: "./dist",
+    static: './dist',
   },
   plugins: [
-      new htmlwebpack({
-        template: "./src/index.html"
-      })
+    new Htmlwebpack({
+      template: './src/index.html',
+    }),
   ],
   module: {
-      rules: [
-          {
-              test: /\.css$/i,
-              use: ["style-loader", "css-loader"],
-          },
-      ],
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
 };
