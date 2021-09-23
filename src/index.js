@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import _ from 'lodash'; // Unused vars disabled for lodash
 import './style.css';
-import { changeCompletedState, dataBase, loadValues } from './functions.js';
+import { changeCompletedState, dataBase, loadValues, updateValues } from './functions.js';
 import { addTask } from "./add-remove.js"
 import Task from './taskClass';
 
@@ -16,8 +16,13 @@ function renderTask(task){
     changeCompletedState(task);
   });
   taskElement.appendChild(completed);
-  const description = document.createElement('p');
-  description.innerText = task.description;
+  const description = document.createElement('input');
+  description.type = "text"
+  description.value = task.description;
+  description.addEventListener("input", () => {
+    dataBase[task.index].description = description.value
+    updateValues()
+  })
   taskElement.appendChild(description);
   const moveicon = document.createElement('span');
   moveicon.classList.add('material-icons');
