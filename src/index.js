@@ -1,9 +1,7 @@
 /* eslint-disable no-unused-vars */
 import _ from 'lodash'; // Unused vars disabled for lodash
 import './style.css';
-import Task from './taskClass.js';
-
-const dataBase = [new Task('Description test1', 2, false), new Task('Description test2', 1, false), new Task('Description test3', 0, false)];
+import { changeCompletedState, dataBase, loadValues } from './functions.js';
 
 function showTasks() {
   dataBase.sort((first, second) => first.index - second.index);
@@ -14,6 +12,10 @@ function showTasks() {
 
     const completed = document.createElement('input');
     completed.type = 'checkbox';
+    completed.checked = task.completed;
+    completed.addEventListener('change', () => {
+      changeCompletedState(task);
+    });
     taskElement.appendChild(completed);
 
     const description = document.createElement('p');
@@ -30,5 +32,6 @@ function showTasks() {
 }
 
 window.onload = () => {
+  loadValues();
   showTasks();
 };
