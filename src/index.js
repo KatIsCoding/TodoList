@@ -2,12 +2,18 @@
 import _ from 'lodash'; // Unused vars disabled for lodash
 import './style.css';
 import { changeCompletedState, dataBase, loadValues, updateValues } from './functions.js';
-import { addTask } from "./add-remove.js"
+import { addTask, removeAll } from "./add-remove.js"
 import Task from './taskClass';
+
+export const completedTasks = []
 
 function renderTask(task){
   const container = document.getElementById('todo-container');
   const taskElement = document.createElement('li');
+  /* Logging the completed tasks element */
+  if (task.completed === true){
+    completedTasks.push(taskElement);
+  }
   taskElement.classList.add('todo-element');
   const completed = document.createElement('input');
   completed.type = 'checkbox';
@@ -29,10 +35,13 @@ function renderTask(task){
   moveicon.innerText = 'more_vert';
   taskElement.appendChild(moveicon);
   container.appendChild(taskElement);
+
 }
 
 
-function showTasks() {
+export function showTasks() {
+  const container = document.getElementById('todo-container')
+  container.innerHTML = ""
   dataBase.sort((first, second) => first.index - second.index);
   dataBase.forEach((task) => {
     renderTask(task)
@@ -53,7 +62,11 @@ window.onload = () => {
         alert("Please write a description of your new task")
       }
     }
-    
+  })
+
+  document.getElementById("wipe-tasks").addEventListener("click", () => {
+    removeAll()
+    showTasks()
   })
 
 };
