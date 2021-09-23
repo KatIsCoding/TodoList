@@ -2,6 +2,8 @@
 import _ from 'lodash'; // Unused vars disabled for lodash
 import './style.css';
 import { changeCompletedState, dataBase, loadValues } from './functions.js';
+import { addTask } from "./add-remove.js"
+import Task from './taskClass';
 
 function renderTask(task){
   const container = document.getElementById('todo-container');
@@ -36,6 +38,17 @@ window.onload = () => {
   loadValues();
   showTasks();
   /* Add event listener to New Task Input */
-  document.getElementById("addTask").addEventListener("submit", () => {console.log("It worked bro")})
+  document.getElementById("addTask").addEventListener("keyup", (e) => {
+    if (e.code === "Enter"){
+      if (e.srcElement.value !== ""){
+        const obj = new Task(e.srcElement.value, dataBase.length, false)
+        addTask(obj)
+        renderTask(obj)
+      }else {
+        alert("Please write a description of your new task")
+      }
+    }
+    
+  })
 
 };

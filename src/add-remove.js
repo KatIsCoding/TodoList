@@ -1,6 +1,7 @@
 import { dataBase, updateValues } from "./functions.js";
 
-function addTask(task){
+export function addTask(task){
     dataBase.push(task)
+    updateValues()
 }
 
