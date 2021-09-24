@@ -5,10 +5,19 @@ export function addTask(task) {
   updateValues();
 }
 
-export function removeAll() {
-  updateDatabase(dataBase.filter((task) => task.completed === false));
+function normalizeIndexes() {
   for (let x = 0; x < dataBase.length; x += 1) {
-    dataBase[x].index = x+1;
+    dataBase[x].index = x + 1;
   }
   updateValues();
+}
+
+export function removeAll() {
+  updateDatabase(dataBase.filter((task) => task.completed === false));
+  normalizeIndexes();
+}
+
+export function removeTask(taskIndex) {
+  dataBase.splice(taskIndex - 1, 1);
+  normalizeIndexes();
 }

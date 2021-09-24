@@ -102,3 +102,10 @@ body * {
   border: none;
   background-color: white;
 }
+
+.delete-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: yellow;
+}
