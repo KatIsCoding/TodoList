@@ -57,7 +57,7 @@ window.onload = () => {
   function addNewTask() {
     const val = document.getElementById('addTask').value;
     if (val !== '') {
-      const obj = new Task(val, dataBase.length, false);
+      const obj = new Task(val, dataBase.length+1, false);
       addTask(obj);
       renderTask(obj);
     }

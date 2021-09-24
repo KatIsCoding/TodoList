@@ -8,7 +8,7 @@ export function addTask(task) {
 export function removeAll() {
   updateDatabase(dataBase.filter((task) => task.completed === false));
   for (let x = 0; x < dataBase.length; x += 1) {
-    dataBase[x].index = x;
+    dataBase[x].index = x+1;
   }
   updateValues();
 }
