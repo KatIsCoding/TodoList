@@ -17,3 +17,9 @@ export function changeCompletedState(task) {
   task.completed = !task.completed;
   updateValues();
 }
+
+/* Used for reassigning dataBase from other scripts */
+export function updateDatabase(data) {
+  dataBase = data;
+  updateValues();
+}
