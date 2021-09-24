@@ -26,8 +26,8 @@ function renderTask(task) {
   taskElement.appendChild(completed);
   const description = document.createElement('input');
   description.type = 'text';
-  description.placeholder = "Enter your task description"
-  description.classList.add("description-input")
+  description.placeholder = 'Enter your task description';
+  description.classList.add('description-input');
   description.value = task.description;
   description.addEventListener('input', () => {
     dataBase[task.index].description = description.value;
@@ -54,14 +54,22 @@ window.onload = () => {
   loadValues();
   showTasks();
   /* Add event listener to New Task Input */
+  function addNewTask() {
+    const val = document.getElementById('addTask').value;
+    if (val !== '') {
+      const obj = new Task(val, dataBase.length, false);
+      addTask(obj);
+      renderTask(obj);
+    }
+  }
   document.getElementById('addTask').addEventListener('keyup', (e) => {
     if (e.code === 'Enter') {
-      if (e.srcElement.value !== '') {
-        const obj = new Task(e.srcElement.value, dataBase.length, false);
-        addTask(obj);
-        renderTask(obj);
-      }
+      addNewTask();
     }
+  });
+
+  document.getElementById('addTaskAction').addEventListener('click', () => {
+    addNewTask();
   });
 
   document.getElementById('wipe-tasks').addEventListener('click', () => {

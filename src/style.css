@@ -1,6 +1,5 @@
 body {
   background-color: #f6f6f6;
-  
 }
 
 body * {
@@ -38,6 +37,15 @@ body * {
   border-bottom-color: #f6f6f6;
   border-bottom-style: solid;
   border-width: 1px;
+  width: 100%;
+}
+
+#addTask:focus-visible {
+  outline: none;
+}
+
+#addTaskAction {
+  cursor: pointer;
 }
 
 #todo-container {
@@ -70,6 +78,7 @@ body * {
   height: 40px;
   border: none;
   background-color: #f6f6f6;
+  cursor: pointer;
 }
 
 .description-input {
@@ -79,4 +88,17 @@ body * {
 
 .description-input:focus-visible {
   outline: none;
+}
+
+.input-task {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  max-width: 380.797px;
+}
+
+.input-task button {
+  border: none;
+  background-color: white;
 }
