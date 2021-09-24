@@ -1,7 +1,8 @@
 /* eslint-disable import/no-mutable-exports */
+/* eslint-disable no-unused-vars */
 import Task from './taskClass.js';
 // Disabling mutable exports to be able to change and reassignt this variable
-export let dataBase = [new Task('Description test1', 2, false), new Task('Description test2', 1, false), new Task('Description test3', 0, false)];
+export let dataBase = [];
 
 export function updateValues() {
   localStorage.setItem('dataBase', JSON.stringify(dataBase));
