@@ -26,6 +26,8 @@ function renderTask(task) {
   taskElement.appendChild(completed);
   const description = document.createElement('input');
   description.type = 'text';
+  description.placeholder = "Enter your task description"
+  description.classList.add("description-input")
   description.value = task.description;
   description.addEventListener('input', () => {
     dataBase[task.index].description = description.value;
