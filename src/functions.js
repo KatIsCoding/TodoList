@@ -1,6 +1,4 @@
 /* eslint-disable import/no-mutable-exports */
-/* eslint-disable no-unused-vars */
-import Task from './taskClass.js';
 // Disabling mutable exports to be able to change and reassignt this variable
 export let dataBase = [];
 

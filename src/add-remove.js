@@ -6,9 +6,9 @@ export function addTask(task) {
 }
 
 function normalizeIndexes() {
-  for (let x = 0; x < dataBase.length; x += 1) {
-    dataBase[x].index = x + 1;
-  }
+  dataBase.forEach((value, i) => {
+    dataBase[i].index = i + 1
+  })
   updateValues();
 }
 
