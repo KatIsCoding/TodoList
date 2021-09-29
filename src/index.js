@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import _ from 'lodash'; // Unused vars disabled for lodash
 import './style.css';
 import {
   changeCompletedState, dataBase, loadValues, updateValues,
@@ -19,7 +18,7 @@ function renderTask(task) {
   const deleteicon = document.createElement('button');
   const completed = document.createElement('input');
   /* Logging the completed tasks element */
-  if (task.completed === true) {
+  if (task.completed) {
     completedTasks.push(taskElement);
   }
   taskElement.classList.add('todo-element');
